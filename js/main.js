@@ -1,0 +1,1 @@
+const BODY = document.body;
