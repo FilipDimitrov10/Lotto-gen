@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font: 1.6vw 'Helvetica', sans-serif;
+}
+
+.container {
+    width: 35vw;
+    height: 80vh;
+    background-color: lightgray;
+    border: 3px solid #5e5e5e;
+    border-radius: 5%;
+    margin: 100px auto 0 auto;
+} 
+
+.container > div {
+    width: 90%;
+    border: 3px solid #5e5e5e;
+    margin: 15px auto 0 auto;
+}
+
+.container > div:first-child {
+    height: 35%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 8px 20px;
+}
+
+.title {
+    grid-column: 1/6;
+    grid-row: 1/2;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #404040;
+}
+
+.min {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin-left: 8px;
+}
+.max {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+input {
+    display: block;
+    width: 100%;
+}
+.min-input {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    margin-left: 8px;
+}
+.max-input {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.set-select {
+    grid-column: 4/6;
+    grid-row: 3/4;
+    margin-right: 8px;
+}
+.save-btn {
+    grid-column: 4/6;
+    grid-row: 4/5;
+    margin-right: 8px;
+}
+
+.container > div:nth-child(2) {
+    height: 55%;
+}
