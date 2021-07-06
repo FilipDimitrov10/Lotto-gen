@@ -1,21 +1,22 @@
 body {
-    margin: 0;
     font: 1.6vw 'Helvetica', sans-serif;
+    margin: 0;
 }
 
 .container {
+    background-color: #d9d9d9;
     width: 35vw;
     height: 80vh;
-    background-color: lightgray;
+    margin: 100px auto 0 auto;
     border: 3px solid #5e5e5e;
     border-radius: 5%;
-    margin: 100px auto 0 auto;
 } 
 
 .container > div {
+    background-color: #ebebeb;
     width: 90%;
-    border: 3px solid #5e5e5e;
     margin: 15px auto 0 auto;
+    border: 3px solid #5e5e5e;
 }
 
 .container > div:first-child {
@@ -27,12 +28,12 @@ body {
 }
 
 .title {
-    grid-column: 1/6;
-    grid-row: 1/2;
-    text-align: center;
     font-size: 1.4em;
     font-weight: bold;
     color: #404040;
+    grid-column: 1/6;
+    grid-row: 1/2;
+    text-align: center;
 }
 
 .min {
@@ -71,5 +72,31 @@ input {
 }
 
 .container > div:nth-child(2) {
-    height: 55%;
+    height: 56%;
+    text-align: center;
+}
+
+.generatebtn {
+    font-size: 1em;
+    font-weight: bold;
+    color: #404040;
+    width: 65%;
+    height: 7vh;
+    margin: 12px 0;
+}
+
+.numbergrid {
+    background-color: #cfcfcf;
+    width: 80%;
+    height: 72%;
+    padding: 5px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+.numbercell {
+    font-size: 0.56em;
+    display: static;
 }
