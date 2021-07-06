@@ -1,0 +1,126 @@
+body {
+    font: 1.6vw 'Helvetica', sans-serif;
+    font-variant: small-caps;
+    margin: 0;
+}
+
+.blue-style {
+    background-color: #758eff;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: #ffffff;
+    border: 0;
+    border-radius: 6%;
+}
+.blue-style:hover, .blue-style:active {
+    background-color: #8a9fff;
+}
+
+.container {
+    background-color: #d9d9d9;
+    width: 35vw;
+    height: 80vh;
+    margin: 100px auto 0 auto;
+    border: 3px solid #5e5e5e;
+    border-radius: 5%;
+} 
+
+.container > div {
+    background-color: #ebebeb;
+    width: 90%;
+    margin: 2.4% auto 2.4% auto;
+    border: 3px solid #5e5e5e;
+}
+
+.container > div:first-child {
+    height: 35%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 2.6% 2%;
+}
+
+.title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #404040;
+    grid-column: 1/6;
+    grid-row: 1/2;
+    text-align: center;
+}
+
+.min {
+    font-size: 0.6em;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin-left: 20%;
+}
+.max {
+    font-size: 0.6em;
+    grid-column: 1/2;
+    grid-row: 4/5;
+    margin-left: 20%;
+}
+
+input {
+    display: block;
+    width: 100%;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.min-input {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.max-input {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.set-select {
+    font-size: 0.6em;
+    grid-column: 4/6;
+    grid-row: 3/4;
+    margin-right: 8%;
+}
+.save-btn {
+    font-size: 0.6em;
+    grid-column: 4/6;
+    grid-row: 4/5;
+    margin-right: 8%;
+}
+
+.container > div:nth-child(2) {
+    height: 56%;
+    text-align: center;
+}
+
+.generatebtn {
+    font-size: 1em;
+    font-weight: bold;
+    width: 65%;
+    height: 7vh;
+    margin: 2% 0 2% 0;
+}
+
+.numbergrid {
+    background-color: #d4dbff;
+    width: 80%;
+    height: 72%;
+    padding: 0.7%;
+    margin: 0 auto;
+    border: 4px solid transparent;
+    border-radius: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0.65%;
+}
+.numbergrid:hover, .numbergrid:active {
+    border: 4px solid #bac5ff;
+}
+.numbercell {
+    font-size: 0.56em;
+    display: static;
+}
