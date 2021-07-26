@@ -32,7 +32,7 @@ body {
     border: 3px solid #5e5e5e;
 }
 
-.container > div:first-child {
+.container > div:first-of-type {
     height: 35%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -49,54 +49,54 @@ body {
     text-align: center;
 }
 
-.min {
+[for="min"] {
     font-size: 0.6em;
     grid-column: 1/2;
     grid-row: 3/4;
     margin-left: 20%;
 }
-.max {
+[for="max"] {
     font-size: 0.6em;
-    grid-column: 1/2;
-    grid-row: 4/5;
+    grid-column: 2/3;
+    grid-row: 3/4;
     margin-left: 20%;
 }
 
 input {
     display: block;
-    width: 100%;
+    width: 75%;
+    margin-left: 20%;
 }
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-.min-input {
-    grid-column: 2/3;
-    grid-row: 3/4;
+[name="min"] {
+    grid-column: 1/2;
+    grid-row: 4/5;
 }
-.max-input {
+[name="max"] {
     grid-column: 2/3;
     grid-row: 4/5;
 }
 
+[for="sets"] {
+    font-size: 0.7em;
+    grid-column: 4/6;
+    grid-row: 3/4
+}
 .set-select {
     font-size: 0.6em;
     grid-column: 4/6;
-    grid-row: 3/4;
-    margin-right: 8%;
-}
-.save-btn {
-    font-size: 0.6em;
-    grid-column: 4/6;
     grid-row: 4/5;
     margin-right: 8%;
 }
 
-.container > div:nth-child(2) {
+.container > div:last-child {
     height: 56%;
     text-align: center;
 }
 
-.generatebtn {
+.submitbtn {
     font-size: 1em;
     font-weight: bold;
     width: 65%;

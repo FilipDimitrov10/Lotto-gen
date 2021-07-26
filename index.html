@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="Stylesheet" href="styles/style.css">
-    <script src="js/main.js"></script>
 </head>
 <body>
+    <form class="mainform">
     <div class="container">
         <div>
             <div class="title">lotto-num generator</div>
-            <label for="min" class="min">Min number:</label>
-            <label for="max" class="max">Max number:</label>
-            <input type="number" name="min" class="blue-style min-input" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
-            <input type="number" name="max" class="blue-style max-input" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
-            <select name="" id="" class="blue-style set-select">
-                <option value="select set amount">select set amount</option>
+            <label for="min">Min number:</label>
+            <label for="max">Max number:</label>
+            <input type="number" required name="min" class="blue-style" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+            <input type="number" required name="max" class="blue-style" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+            <label for="sets">Select amount of sets:</label>
+            <select required name="sets" id="" class="blue-style set-select">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -30,10 +29,9 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button class="blue-style save-btn">save configuration</button>
         </div>
         <div>
-            <button class="blue-style generatebtn">generate numbers</button>
+            <button type="submit" class="blue-style submitbtn">generate numbers</button>
             <div class="numbergrid">
                 <div class="numbercell r-1 c-1">1.1</div>
                 <div class="numbercell r-1 c-2">1.2</div>
@@ -138,5 +136,7 @@
             </div>
         </div>
     </div>
+    </form>
 </body>
+<script src="js/main.js"></script>
 </html>
