@@ -122,5 +122,5 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 .numbercell {
     font-size: 0.56em;
-    display: static;
+    display: static
 }
