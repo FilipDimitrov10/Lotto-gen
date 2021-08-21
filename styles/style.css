@@ -49,34 +49,16 @@ body {
     text-align: center;
 }
 
-[for="min"] {
-    font-size: 0.6em;
-    grid-column: 1/2;
+[for="lotto"] {
+    font-size: 0.7em;
+    grid-column: 1/3;
     grid-row: 3/4;
-    margin-left: 20%;
+    margin-left: 8%;
 }
-[for="max"] {
-    font-size: 0.6em;
-    grid-column: 2/3;
-    grid-row: 3/4;
-    margin-left: 20%;
-}
-
-input {
-    display: block;
-    width: 75%;
-    margin-left: 20%;
-}
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-[name="min"] {
-    grid-column: 1/2;
+.lotto-select {
+    grid-column: 1/3;
     grid-row: 4/5;
-}
-[name="max"] {
-    grid-column: 2/3;
-    grid-row: 4/5;
+    margin-left: 8%;
 }
 
 [for="sets"] {
@@ -85,7 +67,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     grid-row: 3/4
 }
 .set-select {
-    font-size: 0.6em;
     grid-column: 4/6;
     grid-row: 4/5;
     margin-right: 8%;

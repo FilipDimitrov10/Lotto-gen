@@ -12,12 +12,14 @@
     <div class="container">
         <div>
             <div class="title">lotto-num generator</div>
-            <label for="min">Min number:</label>
-            <label for="max">Max number:</label>
-            <input type="number" required name="min" class="blue-style" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
-            <input type="number" required name="max" class="blue-style" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+            <label for="lotto">Select lottery system:</label>
+            <select name="lotto" class="blue-style lotto-select">
+                <option value="Powerball">Powerball</option>
+                <option value="EuroMillions">EuroMillions</option>
+                <option value="Loto-7">Лото 7</option>
+            </select>
             <label for="sets">Select amount of sets:</label>
-            <select name="sets" id="" class="blue-style set-select">
+            <select name="sets" class="blue-style set-select">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
