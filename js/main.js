@@ -16,13 +16,50 @@ const rowInputMap = {
     10: "r-10"
 };
 
+const lottoList = {
+    "Powerball": {
+        column: "c-6",
+        regularNums: {
+            min: 1,
+            max: 69,
+            val: 5
+        },
+        specialNums: {
+            min: 1,
+            max: 26,
+            val: 1
+        }
+    },
+    "EuroMillions": {
+        column: "c-7",
+        regularNums: {
+            min: 1,
+            max: 50,
+            val: 5
+        },
+        specialNums: {
+            min: 1,
+            max: 12,
+            val: 2
+        }
+    },
+    "Loto-7": {
+        column: "c-7",
+        regularNums: {
+            min: 1,
+            max: 37,
+            val: 7
+        },
+        specialNums: null
+    }
+};
+
 SubmitBtn.addEventListener("click", () => {
-    let minVal = parseInt(document.querySelector('[name=min]').value);
-    let maxVal = parseInt(document.querySelector('[name=max]').value);
+    let lottoVal = document.querySelector('.lotto-select').value;
     let setVal = parseInt(document.querySelector('.set-select').value);
     
     let rowSelect = rowInputMap[setVal];
-    let colSelect = "c-7";
+    let colSelect = lottoList[lottoVal].column;
     let nodeSelector = `${rowSelect} ${colSelect}`;
 
     let selectedNodes = document.getElementsByClassName(nodeSelector);
@@ -31,35 +68,92 @@ SubmitBtn.addEventListener("click", () => {
         NumberCells[i].style.display = "static";
     }
 
-    const createCellArray = (minval, maxval, sets) => {
-        let uCellArr = new Array(sets).fill(0).map(() => new Array(7).fill(0));
-        for(let i = 0; i < sets; i++) {
-            for(let j = 0; j < 7; j++) {
-                uCellArr[i][j] = Math.floor(Math.random() * (maxval - minval + 1)) + minval;
+    if(lottoList[lottoVal].specialNums != null) {
+        let regMinVal = parseInt(lottoList[lottoVal].regularNums.min);
+        let regMaxVal = parseInt(lottoList[lottoVal].regularNums.max);
+        let regNumVal = parseInt(lottoList[lottoVal].regularNums.val);
+        let specMinVal = parseInt(lottoList[lottoVal].specialNums.min);
+        let specMaxVal = parseInt(lottoList[lottoVal].specialNums.max);
+        let specNumVal = parseInt(lottoList[lottoVal].specialNums.val);
+
+        const createCellArray = (regMinVal, regMaxVal, regNumVal, specMinVal, specMaxVal, specNumVal, sets) => {
+            let uCellArr = new Array(sets).fill(0).map(() => new Array(regNumVal + specNumVal).fill(0));
+            for(let i = 0; i < sets; i++) {
+                const uRegArr = new Array(regNumVal).fill(0);
+                const uSpecArr = new Array(specNumVal).fill(0);
+
+                for(let u = 0; u < uRegArr.length; u++) {
+                    uRegArr[u] = Math.floor(Math.random() * (regMaxVal - regMinVal + 1)) + regMinVal;
+                }
+                for(let s = 0; s < uSpecArr.length; s++) {
+                    uSpecArr[s] = Math.floor(Math.random() * (specMaxVal - specMinVal + 1)) + specMinVal;
+                }
+
+                uRegArr.sort((a, b) => {
+                    return a-b;
+                })
+                uSpecArr.sort((a, b) => {
+                    return a-b;
+                })
+                const tArr = uRegArr.concat(uSpecArr);
+                for(let j = 0; j < tArr.length; j++) {
+                    uCellArr[i][j] = tArr[j];
+                }
+            }
+            return uCellArr;
+        }
+
+        const setCellArray = (pArray) => {
+            let sCellArr = [].concat.apply([], pArray);
+            return sCellArr;
+        }
+
+        const mapValues = (sArray) => {
+            for(let i = 0; i < selectedNodes.length; i++) {
+                selectedNodes[i].textContent = sArray[i];            
             }
         }
-        for(let i = 0; i < uCellArr.length; i++) {
-            uCellArr[i].sort((a, b) => {
-                return a-b;
-            });
-        }
-    
-        return uCellArr;
-    }
-    
-    const setCellArray = (pArray) => {
-        let sCellArr = [].concat.apply([], pArray);
-        return sCellArr;
-    }
 
-    const mapValues = () => {
-        for(let i = 0; i < selectedNodes.length; i++) {
-            selectedNodes[i].textContent = sArray[i];
-        }
+        let uArray = createCellArray(regMinVal, regMaxVal, regNumVal, specMinVal, specMaxVal, specNumVal, setVal);
+        const sArray = setCellArray(uArray);
+        mapValues(sArray);
+        return false;
     }
+    else {
+        let minVal = parseInt(lottoList[lottoVal].regularNums.min);
+        let maxVal = parseInt(lottoList[lottoVal].regularNums.max);
+        let numVal = parseInt(lottoList[lottoVal].regularNums.val);
+        
+        const createCellArray = (minval, maxval, sets, val) => {
+            let uCellArr = new Array(sets).fill(0).map(() => new Array(val).fill(0));
+            for(let i = 0; i < sets; i++) {
+                for(let j = 0; j < val; j++) {
+                    uCellArr[i][j] = Math.floor(Math.random() * (maxval - minval + 1)) + minval;
+                }
+            }
+            for(let i = 0; i < uCellArr.length; i++) {
+                uCellArr[i].sort((a, b) => {
+                    return a-b;
+                });
+            }
+        
+            return uCellArr;
+        }
+        
+        const setCellArray = (pArray) => {
+            let sCellArr = [].concat.apply([], pArray);
+            return sCellArr;
+        }
     
-    let uArray = createCellArray(minVal, maxVal, setVal);
-    const sArray = setCellArray(uArray);
-    mapValues();
-    return false;
+        const mapValues = (sArray) => {
+            for(let i = 0; i < selectedNodes.length; i++) {
+                selectedNodes[i].textContent = sArray[i];
+            }
+        }
+        
+        let uArray = createCellArray(minVal, maxVal, setVal, numVal);
+        const sArray = setCellArray(uArray);
+        mapValues(sArray);
+        return false;
+    }
 })
