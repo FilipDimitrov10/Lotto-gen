@@ -49,22 +49,23 @@ body {
     text-align: center;
 }
 
-[for="lotto"] {
+label {
     font-size: 0.7em;
-    grid-column: 1/3;
     grid-row: 3/4;
+}
+
+[for="lotto"] {
+    grid-column: 1/3;
     margin-left: 8%;
 }
 .lotto-select {
-    grid-column: 1/3;
+    grid-column: 1/4;
     grid-row: 4/5;
-    margin-left: 8%;
+    margin-left: 5%;
 }
 
 [for="sets"] {
-    font-size: 0.7em;
     grid-column: 4/6;
-    grid-row: 3/4
 }
 .set-select {
     grid-column: 4/6;

@@ -17,41 +17,20 @@ const rowInputMap = {
 };
 
 const lottoList = {
-    "Powerball": {
-        column: "c-6",
-        regularNums: {
-            min: 1,
-            max: 69,
-            val: 5
-        },
-        specialNums: {
-            min: 1,
-            max: 26,
-            val: 1
-        }
-    },
-    "EuroMillions": {
-        column: "c-7",
-        regularNums: {
-            min: 1,
-            max: 50,
-            val: 5
-        },
-        specialNums: {
-            min: 1,
-            max: 12,
-            val: 2
-        }
-    },
-    "Loto-7": {
-        column: "c-7",
-        regularNums: {
-            min: 1,
-            max: 37,
-            val: 7
-        },
-        specialNums: null
-    }
+    "Powerball(USA)": { column: "c-6", regularNums: { min: 1, max: 69, val: 5 }, specialNums: { min: 1, max: 26, val: 1 } },
+    "Cash4Life": { column: "c-6", regularNums: { min: 1, max: 60, val: 5 }, specialNums: { min: 1, max: 4, val: 1 } },
+    "Decades-Of-Dollars": { column: "c-6", regularNums: { min: 1, max: 47, val: 6 }, specialNums: null },
+    "Hot-Lotto": { column: "c-6", regularNums: { min: 1, max: 47, val: 5 }, specialNums: { min: 1, max: 19, val: 1 } },
+    "Lotto-America": { column: "c-6", regularNums: { min: 1, max: 52, val: 5 }, specialNums: { min: 1, max: 10, val: 1 } },
+    "Lucky-For-Life": { column: "c-6", regularNums: { min: 1, max: 48, val: 5 }, specialNums: { min: 1, max: 18, val: 1 } },
+    "Mega-Bucks-Plus": { column: "c-6", regularNums: { min: 1, max: 41, val: 5 }, specialNums: { min: 1, max: 6, val: 1 } },
+    "MegaMillions": { column: "c-6", regularNums: { min: 1, max: 70, val: 5 }, specialNums: { min: 1, max: 25, val: 1 } },
+    "Monopoly-Millionaires": { column: "c-5", regularNums: { min: 1, max: 52, val: 5 }, specialNums: null },
+    "Weekly-Grand": { column: "c-5", regularNums: { min: 1, max: 35, val: 4 }, specialNums: { min: 1, max: 35, val: 1 } },
+    "EuroMillions": { column: "c-7", regularNums: { min: 1, max: 50, val: 5 }, specialNums: { min: 1, max: 12, val: 2 } },
+    "EuroJackpot": { column: "c-7", regularNums: { min: 1, max: 50, val: 5 }, specialNums: { min: 1, max: 10, val: 2 } },
+    "VikingLotto": { column: "c-7", regularNums: { min: 1, max: 48, val: 6 }, specialNums: { min: 1, max: 5, val: 1 } },
+    "Loto-7": { column: "c-7", regularNums: { min: 1, max: 37, val: 7 }, specialNums: null }
 };
 
 SubmitBtn.addEventListener("click", () => {
