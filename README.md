@@ -4,6 +4,6 @@ Intended to be run and used simply via browser.
 
 
 ## Intended features
-Configurable lottery system, containing number combination systems from lotteries all across the world. \
-Configurable amount of number sets per generation. \
+Configurable lottery system, containing lottery games from all across the world. \
+Configurable amount of number combinations per generation. \
 Light and dark color theme configuration.
