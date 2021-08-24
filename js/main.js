@@ -69,12 +69,7 @@ document.addEventListener("click", e => {
         }, 5001);
     
         let nodeSelector = `${rowInputMap[setVal]} ${lottoList[lottoVal].column}`;
-
         let selectedNodes = document.getElementsByClassName(nodeSelector);
-        for(let i = 0; i < NumberCells.length; i++) {
-            NumberCells[i].textContent = " ";
-            NumberCells[i].style.display = "static";
-        }
 
         const mapValues = (sArray) => {
             for(let i = 0; i < selectedNodes.length; i++) {
@@ -104,7 +99,13 @@ document.addEventListener("click", e => {
             
             const uArray = createCellArrayR(rMinVal, rMaxVal, rNumVal, setVal);
             const sArray = setCellArray(uArray);
-            mapValues(sArray);
+            setTimeout(() => {
+                for(let i = 0; i < NumberCells.length; i++) {
+                    NumberCells[i].textContent = " ";
+                    NumberCells[i].style.display = "static";
+                }
+                mapValues(sArray);
+            }, 2500);
             return false;
         }   
         else {
@@ -144,7 +145,13 @@ document.addEventListener("click", e => {
 
             const uArray = createCellArrayS(rMinVal, rMaxVal, rNumVal, sMinVal, sMaxVal, sNumVal, setVal);
             const sArray = setCellArray(uArray);
-            mapValues(sArray);
+            setTimeout(() => {
+                for(let i = 0; i < NumberCells.length; i++) {
+                    NumberCells[i].textContent = " ";
+                    NumberCells[i].style.display = "static";
+                }
+                mapValues(sArray);
+            }, 2500);
             return false;
         }
     }

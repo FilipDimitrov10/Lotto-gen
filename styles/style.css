@@ -1,5 +1,4 @@
 @keyframes grid-anim {
-    0% { color: #d4dbff; }
     50% { background-color: #bac5ff; color: #bac5ff; }
     100% { background-color: #d4dbff; color: black; }
 }
