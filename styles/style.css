@@ -1,3 +1,9 @@
+@keyframes grid-anim {
+    0% { color: #d4dbff; }
+    50% { background-color: #bac5ff; color: #bac5ff; }
+    100% { background-color: #d4dbff; color: black; }
+}
+
 body {
     font: 1.6vw 'Helvetica', sans-serif;
     font-variant: small-caps;
@@ -12,7 +18,7 @@ body {
     border: 0;
     border-radius: 6%;
 }
-.blue-style:hover, .blue-style:active {
+.blue-style:hover {
     background-color: #8a9fff;
 }
 
@@ -85,6 +91,17 @@ label {
     height: 7vh;
     margin: 2% 0 2% 0;
 }
+.submitbtn-innactive {
+    background-color: gray;
+    font-size: 1em;
+    font-weight: bold;
+    width: 65%;
+    height: 7vh;
+    margin: 2% 0 2% 0;
+}
+.submitbtn-innactive:hover {
+    background-color: gray;
+}
 
 .numbergrid {
     background-color: #d4dbff;
@@ -94,6 +111,7 @@ label {
     margin: 0 auto;
     border: 4px solid transparent;
     border-radius: 5%;
+    color: black;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -101,6 +119,9 @@ label {
 }
 .numbergrid:hover, .numbergrid:active {
     border: 4px solid #bac5ff;
+}
+.numbergrid-animated {
+    animation: grid-anim 5s;
 }
 .numbercell {
     font-size: 0.56em;
