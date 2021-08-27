@@ -199,12 +199,18 @@ document.addEventListener("click", e => {
             let rMinVal = parseInt(lottoList[lottoVal].regularNums.min);
             let rMaxVal = parseInt(lottoList[lottoVal].regularNums.max);
             let rNumVal = parseInt(lottoList[lottoVal].regularNums.val);
-            
+        
+
             const createCellArrayR = (minVal, maxVal, numVal, Sets) => {
                 let uCellArr = new Array(Sets).fill(0).map(() => new Array(numVal).fill(0));
                 for(let i = 0; i < Sets; i++) {
+                    let tempArr = [];
+                    while(tempArr.length < numVal) {
+                        let r = Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal;
+                        if(tempArr.indexOf(r) === -1) tempArr.push(r);
+                    }
                     for(let j = 0; j < numVal; j++) {
-                        uCellArr[i][j] = Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal;
+                        uCellArr[i][j] = tempArr[j]
                     }
                 }
                 for(let i = 0; i < uCellArr.length; i++) {
@@ -239,12 +245,22 @@ document.addEventListener("click", e => {
                 for(let i = 0; i < Sets; i++) {
                     const uRegArr = new Array(regNumVal).fill(0);
                     const uSpecArr = new Array(specNumVal).fill(0);
+                    let rTempArr = [];
+                    while(rTempArr.length < regNumVal) {
+                        let r = Math.floor(Math.random() * (regMaxVal - regMinVal + 1)) + regMinVal;
+                        if(rTempArr.indexOf(r) === -1) rTempArr.push(r);
+                    }
+                    let sTempArr = [];
+                    while(sTempArr.length < specNumVal) {
+                        let r = Math.floor(Math.random() * (specMaxVal - specMinVal + 1)) + specMinVal;
+                        if(sTempArr.indexOf(r) === -1) sTempArr.push(r);
+                    }
             
                     for(let u = 0; u < uRegArr.length; u++) {
-                        uRegArr[u] = Math.floor(Math.random() * (regMaxVal - regMinVal + 1)) + regMinVal;
+                        uRegArr[u] = rTempArr[u];
                     }
                     for(let s = 0; s < uSpecArr.length; s++) {
-                        uSpecArr[s] = Math.floor(Math.random() * (specMaxVal - specMinVal + 1)) + specMinVal;
+                        uSpecArr[s] = sTempArr[s];
                     }
             
                     uRegArr.sort((a, b) => {
@@ -257,6 +273,8 @@ document.addEventListener("click", e => {
                     for(let j = 0; j < tArr.length; j++) {
                         uCellArr[i][j] = tArr[j];
                     }
+                    console.log(regNumVal);
+                    console.log(specNumVal);
                 }
                 return uCellArr;
             }
@@ -274,3 +292,4 @@ document.addEventListener("click", e => {
         }
     }
 })
+
