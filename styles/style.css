@@ -120,7 +120,7 @@ label {
     border: 4px solid #bac5ff;
 }
 .numbergrid-animated {
-    animation: grid-anim 5s;
+    animation: grid-anim 2s;
 }
 .numbercell {
     font-size: 0.56em;

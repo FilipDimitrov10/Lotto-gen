@@ -184,7 +184,7 @@ document.addEventListener("click", e => {
             Submit.classList.toggle("submitbtn-innactive");
             Submit.classList.toggle("submitbtn")
             NumberGrid.classList.toggle("numbergrid-animated");
-        }, 5001);
+        }, 2001);
     
         let nodeSelector = `${rowInputMap[setVal]} ${lottoList[lottoVal].column}`;
         let selectedNodes = document.getElementsByClassName(nodeSelector);
@@ -229,7 +229,7 @@ document.addEventListener("click", e => {
                     NumberCells[i].style.display = "static";
                 }
                 mapValues(sArray);
-            }, 2500);
+            }, 1000);
             return false;
         }   
         else {
@@ -287,7 +287,7 @@ document.addEventListener("click", e => {
                     NumberCells[i].style.display = "static";
                 }
                 mapValues(sArray);
-            }, 2500);
+            }, 1000);
             return false;
         }
     }
